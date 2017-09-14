@@ -45,6 +45,8 @@ void warnSystray()
 
 int main(int argc, char **argv)
 {
+    //Tjo
+
     Q_INIT_RESOURCE(client);
 
 #ifdef Q_OS_WIN
