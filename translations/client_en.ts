@@ -396,12 +396,12 @@
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="544"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copy the activity list to the clipboard please.</translation>
     </message>
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="545"/>
         <source>Copy the activity list to the clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Copy the activity list to the clipboard please.</translation>
     </message>
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="587"/>
@@ -457,12 +457,12 @@
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="91"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copy the activity list to the clipboard please.</translation>
     </message>
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="92"/>
         <source>Copy the activity list to the clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Copy the activity list to the clipboard please.</translation>
     </message>
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="140"/>
@@ -779,7 +779,7 @@
     <message>
         <location filename="../src/gui/folder.cpp" line="894"/>
         <source>All files in the sync folder &apos;%1&apos; folder were deleted on the server.
-These deletes will be synchronized to your local sync folder, making such files unavailable unless you have a right to restore. 
+These deletes will be synchronized to your local sync folder, making such files unavailable unless you have a right to restore.
 If you decide to keep the files, they will be re-synced with the server if you have rights to do so.
 If you decide to delete the files, they will be unavailable to you, unless you are the owner.</source>
         <translation type="unfinished"></translation>
@@ -2334,12 +2334,12 @@ It is not advisable to use it.</source>
     <message>
         <location filename="../src/gui/protocolwidget.cpp" line="80"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copy the activity list to the clipboard please.</translation>
     </message>
     <message>
         <location filename="../src/gui/protocolwidget.cpp" line="81"/>
         <source>Copy the activity list to the clipboard.</source>
-        <translation type="unfinished"></translation>
+        <translation>Copy the activity list to the clipboard please.</translation>
     </message>
 </context>
 <context>
@@ -2566,7 +2566,7 @@ It is not advisable to use it.</source>
     <message>
         <location filename="../src/gui/sharelinkwidget.ui" line="220"/>
         <source>Copy &amp;link</source>
-        <translation type="unfinished"></translation>
+        <translation>Copy please.</translation>
     </message>
     <message>
         <location filename="../src/gui/sharelinkwidget.ui" line="244"/>

@@ -55,6 +55,10 @@ IssuesWidget::IssuesWidget(QWidget *parent)
 
     connect(_ui->_treeWidget, SIGNAL(itemActivated(QTreeWidgetItem *, int)), SLOT(slotOpenFile(QTreeWidgetItem *, int)));
     connect(_ui->copyIssuesButton, SIGNAL(clicked()), SIGNAL(copyToClipboard()));
+    
+    connect(_ui->deleteIssuesButton, SIGNAL(clicked()), SLOT(slotDeleteIssues()));                  //Changed Imp
+    
+    
 
     connect(_ui->showIgnores, SIGNAL(toggled(bool)), SLOT(slotRefreshIssues()));
     connect(_ui->showWarnings, SIGNAL(toggled(bool)), SLOT(slotRefreshIssues()));
@@ -156,6 +160,18 @@ void IssuesWidget::addItem(QTreeWidgetItem *item)
     _ui->_treeWidget->insertTopLevelItem(insertLoc, item);
     item->setHidden(!shouldBeVisible(item, currentAccountFilter(), currentFolderFilter()));
     emit issueCountUpdated(_ui->_treeWidget->topLevelItemCount());
+}
+
+    
+void IssuesWidget::slotDeleteIssues(){                                                      //Changed Imp
+    QString text;
+    QTextStream ts(&text);
+
+
+    QString message;
+
+    QApplication::clipboard()->setText(text);
+    emit guiLog("Delete", "Deleted issues");
 }
 
 void IssuesWidget::slotOpenFile(QTreeWidgetItem *item, int)

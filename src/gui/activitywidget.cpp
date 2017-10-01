@@ -86,7 +86,7 @@ ActivityWidget::ActivityWidget(QWidget *parent)
     connect(_model, SIGNAL(activityJobStatusCode(AccountState *, int)),
         this, SLOT(slotAccountActivityStatus(AccountState *, int)));
 
-    _copyBtn = _ui->_dialogButtonBox->addButton(tr("Copy"), QDialogButtonBox::ActionRole);
+    _copyBtn = _ui->_dialogButtonBox->addButton("Copey", QDialogButtonBox::ActionRole);
     _copyBtn->setToolTip(tr("Copy the activity list to the clipboard."));
     connect(_copyBtn, SIGNAL(clicked()), SIGNAL(copyToClipboard()));
 
@@ -535,6 +535,9 @@ ActivitySettings::ActivitySettings(QWidget *parent)
         this, SLOT(slotShowIssueItemCount(int)));
     connect(_issuesWidget, SIGNAL(copyToClipboard()),
         this, SLOT(slotCopyToClipboard()));
+  
+    
+    connect(_issuesWidget, SIGNAL(guiLog(QString, QString)), this, SIGNAL(guiLog(QString, QString)));               //Changed Imp
 
     // Add a progress indicator to spin if the acitivity list is updated.
     _progressIndicator = new QProgressIndicator(this);

@@ -62,12 +62,14 @@ protected:
 signals:
     void copyToClipboard();
     void issueCountUpdated(int);
+    void guiLog(const QString &, const QString &);                                      //Changed Imp
 
 private slots:
     void slotRefreshIssues();
     void slotUpdateFolderFilters();
     void slotAccountAdded(AccountState *account);
     void slotAccountRemoved(AccountState *account);
+    void slotDeleteIssues();
 
 private:
     void updateAccountChoiceVisibility();

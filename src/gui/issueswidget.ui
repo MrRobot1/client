@@ -149,6 +149,16 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="deleteIssuesButton">
+       <property name="toolTip">
+        <string>Delete selected file/files.</string>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
   </layout>
