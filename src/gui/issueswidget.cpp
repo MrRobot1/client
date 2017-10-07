@@ -55,10 +55,10 @@ IssuesWidget::IssuesWidget(QWidget *parent)
 
     connect(_ui->_treeWidget, SIGNAL(itemActivated(QTreeWidgetItem *, int)), SLOT(slotOpenFile(QTreeWidgetItem *, int)));
     connect(_ui->copyIssuesButton, SIGNAL(clicked()), SIGNAL(copyToClipboard()));
-    
+
     connect(_ui->deleteIssuesButton, SIGNAL(clicked()), SLOT(slotDeleteIssues()));                  //Changed Imp
-    
-    
+
+
 
     connect(_ui->showIgnores, SIGNAL(toggled(bool)), SLOT(slotRefreshIssues()));
     connect(_ui->showWarnings, SIGNAL(toggled(bool)), SLOT(slotRefreshIssues()));
@@ -127,6 +127,7 @@ void IssuesWidget::cleanItems(const QString &folder)
 {
     // The issue list is a state, clear it and let the next sync fill it
     // with ignored files and propagation errors.
+    //qDebug(qUtf8Printable(folder));                                                     //Changed Imp
     int itemCnt = _ui->_treeWidget->topLevelItemCount();
     for (int cnt = itemCnt - 1; cnt >= 0; cnt--) {
         QTreeWidgetItem *item = _ui->_treeWidget->topLevelItem(cnt);
@@ -162,16 +163,32 @@ void IssuesWidget::addItem(QTreeWidgetItem *item)
     emit issueCountUpdated(_ui->_treeWidget->topLevelItemCount());
 }
 
-    
+
 void IssuesWidget::slotDeleteIssues(){                                                      //Changed Imp
-    QString text;
-    QTextStream ts(&text);
 
+    QList<QTreeWidgetItem*> items = _ui->_treeWidget->selectedItems();
 
-    QString message;
+    foreach(QTreeWidgetItem *item, items){
 
-    QApplication::clipboard()->setText(text);
-    emit guiLog("Delete", "Deleted issues");
+      QString folderName = item->data(2, Qt::UserRole).toString();
+      QString fileName = item->text(1);
+
+      Folder *folder = FolderMan::instance()->folder(folderName);
+      if (folder) {
+          // folder->path() always comes back with trailing path
+          QString fullPath = folder->path() + fileName;
+          if (QFile(fullPath).exists()) {
+            QFile file (fullPath);
+            file.remove();      
+          }
+      }
+      
+      delete _ui->_treeWidget->takeTopLevelItem(_ui->_treeWidget->indexOfTopLevelItem(item));
+    }
+
+    emit(issueCountUpdated(_ui->_treeWidget->topLevelItemCount()));
+
+    emit guiLog("Deleted", "The file was removed.");
 }
 
 void IssuesWidget::slotOpenFile(QTreeWidgetItem *item, int)
@@ -184,6 +201,7 @@ void IssuesWidget::slotOpenFile(QTreeWidgetItem *item, int)
         // folder->path() always comes back with trailing path
         QString fullPath = folder->path() + fileName;
         if (QFile(fullPath).exists()) {
+
             showInFileManager(fullPath);
         }
     }
