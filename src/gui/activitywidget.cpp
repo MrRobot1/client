@@ -86,7 +86,7 @@ ActivityWidget::ActivityWidget(QWidget *parent)
     connect(_model, SIGNAL(activityJobStatusCode(AccountState *, int)),
         this, SLOT(slotAccountActivityStatus(AccountState *, int)));
 
-    _copyBtn = _ui->_dialogButtonBox->addButton("Copey", QDialogButtonBox::ActionRole);
+    _copyBtn = _ui->_dialogButtonBox->addButton("Copy", QDialogButtonBox::ActionRole);
     _copyBtn->setToolTip(tr("Copy the activity list to the clipboard."));
     connect(_copyBtn, SIGNAL(clicked()), SIGNAL(copyToClipboard()));
 

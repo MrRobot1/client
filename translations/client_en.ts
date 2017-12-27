@@ -396,12 +396,12 @@
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="544"/>
         <source>Copy</source>
-        <translation>Copy the activity list to the clipboard please.</translation>
+        <translation>Copy</translation>
     </message>
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="545"/>
         <source>Copy the activity list to the clipboard.</source>
-        <translation>Copy the activity list to the clipboard please.</translation>
+        <translation>Copy the activity list to the clipboard.</translation>
     </message>
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="587"/>
@@ -457,12 +457,12 @@
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="91"/>
         <source>Copy</source>
-        <translation>Copy the activity list to the clipboard please.</translation>
+        <translation>Copy</translation>
     </message>
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="92"/>
         <source>Copy the activity list to the clipboard.</source>
-        <translation>Copy the activity list to the clipboard please.</translation>
+        <translation>Copy the activity list to the clipboard.</translation>
     </message>
     <message>
         <location filename="../src/gui/activitywidget.cpp" line="140"/>
@@ -2334,12 +2334,12 @@ It is not advisable to use it.</source>
     <message>
         <location filename="../src/gui/protocolwidget.cpp" line="80"/>
         <source>Copy</source>
-        <translation>Copy the activity list to the clipboard please.</translation>
+        <translation>Copy</translation>
     </message>
     <message>
         <location filename="../src/gui/protocolwidget.cpp" line="81"/>
         <source>Copy the activity list to the clipboard.</source>
-        <translation>Copy the activity list to the clipboard please.</translation>
+        <translation>Copy the activity list to the clipboard.</translation>
     </message>
 </context>
 <context>
